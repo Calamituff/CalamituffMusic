@@ -1,0 +1,4 @@
+author = Calamituff
+version = 1
+displayName = Calamituff's Calamity Music Replacement
+modReferences = CalamityMod
