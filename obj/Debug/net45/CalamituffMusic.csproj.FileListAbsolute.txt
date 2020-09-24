@@ -1,0 +1,4 @@
+C:\Users\44775\Documents\My Games\Terraria\ModLoader\Mod Sources\CalamituffMusic\obj\Debug\net45\CalamituffMusic.csprojAssemblyReference.cache
+C:\Users\44775\Documents\My Games\Terraria\ModLoader\Mod Sources\CalamituffMusic\obj\Debug\net45\CalamituffMusic.AssemblyInfoInputs.cache
+C:\Users\44775\Documents\My Games\Terraria\ModLoader\Mod Sources\CalamituffMusic\obj\Debug\net45\CalamituffMusic.AssemblyInfo.cs
+C:\Users\44775\Documents\My Games\Terraria\ModLoader\Mod Sources\CalamituffMusic\obj\Debug\net45\CalamituffMusic.csproj.CoreCompileInputs.cache

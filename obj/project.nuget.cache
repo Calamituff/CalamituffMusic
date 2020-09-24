@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "NlNRwfVBTmKnuRGlP4wZUe6hZu7s1K/+bx9Z1/653HkrR9xGpEmBEjPzb6gDoQ6cjo3gqxPPWmlJxVCoBkGUsw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\44775\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\CalamituffMusic\\CalamituffMusic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\44775\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
