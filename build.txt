@@ -1,4 +1,5 @@
 author = Calamituff
-version = 1
-displayName = Calamituff's Calamity Music Replacement
+version = 1.1.1.1
+displayName = Calamituff's Calamity Music Replacement (PART 1: CALAMITY BOSSES)
 modReferences = CalamityMod
+modReferences = CalamituffMusic2
