@@ -15,13 +15,6 @@ namespace CalamituffMusic
 		public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
 			Mod calamityMod = ModLoader.GetMod("CalamityMod");
-			bool incrags = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "crags") ?? false;
-			bool inastral = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "astral") ?? false;
-			bool insulphur = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "sulphursea") ?? false;
-			bool insunken = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "sunkensea") ?? false;
-			bool inabyss = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "abyss") ?? false;
-			bool inlayer3 = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "layer3") ?? false;
-			bool inlayer4 = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetInZone", Main.LocalPlayer, "layer4") ?? false;
 			bool yharon2 = (bool?)ModLoader.GetMod("CalamityMod")?.Call("GetBossDowned", "buffedeclipse") ?? false;
 			int scalIndex = NPC.FindFirstNPC(calamityMod.NPCType("SupremeCalamitas"));
 			if (scalIndex > -1 && Main.npc[scalIndex].modNPC is ModNPC scal)
@@ -72,87 +65,15 @@ namespace CalamituffMusic
 				}
 			}
 
-			if (incrags)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/BrimstoneCrags");
-				priority = MusicPriority.Environment;
-			}
-
-			if (inastral && !Main.player[Main.myPlayer].ZoneDirtLayerHeight)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/AstralInfection");
-				priority = MusicPriority.Environment;
-			}
-
-			if (inastral && Main.player[Main.myPlayer].ZoneDirtLayerHeight)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/AstralUnderground");
-				priority = MusicPriority.Environment;
-			}
-
-			if (insunken)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/SunkenSea");
-				priority = MusicPriority.Environment;
-			}
-
-			if (insulphur)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/SulphurSea");
-				priority = MusicPriority.Environment;
-			}
-
-			if (inabyss)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Abyss1");
-				priority = MusicPriority.Environment;
-			}
-
-			if (inlayer3)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Abyss2");
-				priority = MusicPriority.Environment;
-			}
-
-			if (inlayer4)
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Abyss3");
-				priority = MusicPriority.Environment;
-			}
-
-			if (NPC.AnyNPCs(NPCID.KingSlime))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/KingSlime");
-				priority = MusicPriority.BossMedium;
-			}
-
 			if (NPC.AnyNPCs(calamityMod.NPCType("DesertScourgeHead")))
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/DesertScourge");
 				priority = MusicPriority.BossMedium;
 			}
 
-			if (NPC.AnyNPCs(NPCID.EyeofCthulhu))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/EyeOfCthulhu");
-				priority = MusicPriority.BossMedium;
-			}
-
 			if (NPC.AnyNPCs(calamityMod.NPCType("CrabulonIdle")))
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Crabulon");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.EaterofWorldsHead))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/EaterOfWorlds");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.BrainofCthulhu))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/BrainOfCthulhu");
 				priority = MusicPriority.BossMedium;
 			}
 
@@ -174,39 +95,9 @@ namespace CalamituffMusic
 				priority = MusicPriority.BossMedium;
 			}
 
-			if (NPC.AnyNPCs(NPCID.SkeletronHead))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Skeletron");
-				priority = MusicPriority.BossMedium;
-			}
-
 			if (NPC.AnyNPCs(calamityMod.NPCType("SlimeGodCore")) || NPC.AnyNPCs(calamityMod.NPCType("SlimeGod")) || NPC.AnyNPCs(calamityMod.NPCType("SlimeGodRun")))
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/SlimeGod");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.WallofFlesh))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/WallOfFlesh");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.TheDestroyer))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Destroyer");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.Retinazer) || NPC.AnyNPCs(NPCID.Spazmatism))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Twins");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.SkeletronPrime))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/SkeletronPrime");
 				priority = MusicPriority.BossMedium;
 			}
 
@@ -240,12 +131,6 @@ namespace CalamituffMusic
 				priority = MusicPriority.BossMedium;
 			}
 
-			if (NPC.AnyNPCs(calamityMod.NPCType("LeviathanStart")))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Siren");
-				priority = MusicPriority.BossMedium;
-			}
-
 			if (NPC.AnyNPCs(calamityMod.NPCType("Siren")))
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Siren2");
@@ -273,12 +158,6 @@ namespace CalamituffMusic
 			if (NPC.AnyNPCs(calamityMod.NPCType("RavagerBody")))
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Ravager");
-				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(NPCID.CultistBoss))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/LunaticCultist");
 				priority = MusicPriority.BossMedium;
 			}
 
@@ -358,12 +237,6 @@ namespace CalamituffMusic
 			{
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Yharon1");
 				priority = MusicPriority.BossMedium;
-			}
-
-			if (NPC.AnyNPCs(calamityMod.NPCType("Cnidrion")))
-			{
-				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Cnidrion");
-				priority = MusicPriority.BossLow;
 			}
 		}
 	}
